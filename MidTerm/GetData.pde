@@ -7,7 +7,6 @@ class Data{
   
     tableName = tableName_;
   }
-
   Table readData(){
     
     try{
@@ -20,12 +19,13 @@ class Data{
   }
   
   int[] getFeatures(String column){
-    int [] features = new int [numRows];
+    int [] features = {};
     if (table != null){
+      features = new int[numRows];
       int i = 0; //dummy iterator
       for (TableRow row: table.rows()){
-        features[i] = row.getInt(column);
-        i++;
+         features[i] = row.getInt(column);
+         i++;
       }
     }  
     return features;

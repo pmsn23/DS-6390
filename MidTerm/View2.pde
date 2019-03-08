@@ -7,7 +7,7 @@ class View2 extends PApplet
   }
   public void settings()
   {
-    this.size(800,600);
+    this.size(300,200);
   }
   
   public void draw()

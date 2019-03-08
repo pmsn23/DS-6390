@@ -1,5 +1,6 @@
 class Controller
 {
+  ControlP5 cp5;
   private View1 myView1;
   private View2 myView2;
   private Model myModel;  
@@ -8,7 +9,7 @@ class Controller
     myView1 = new View1(this);
     myView2 = new View2(this);
     myModel = new Model(this);
-    
+
     PApplet.runSketch(new String[]{"My View 1"}, myView1);
     PApplet.runSketch(new String[]{"My View 2"}, myView2);     
     myView1.updateRadius(myModel.getRadius1()); 
@@ -23,7 +24,5 @@ class Controller
   {
     myModel.increaseRadius2();
     myView2.updateRadius(myModel.getRadius2());
-  
   }
-  
 }
