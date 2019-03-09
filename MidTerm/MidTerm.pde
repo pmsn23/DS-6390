@@ -4,7 +4,9 @@
 import org.gicentre.utils.stat.*;
 import controlP5.*;
 ControlP5 cp5;
+ControlP5 cp6;
 DropdownList d1;
+
 Controller myController;
 int iniPosX = 50;
 int iniPosY = 50;
@@ -32,7 +34,7 @@ String name;
 
 void settings()
 {
-  size(400,200);
+  size(800,400);
   getNames();
 
   myController = new Controller();
@@ -78,7 +80,7 @@ void draw()
   rectMode(CORNER);
   textAlign(CENTER, CENTER);
   fill(255);
-  text("Age", width/2, height-15);
+  //text("Age", width/2, height-15);
   cp5 = new ControlP5(this);
   // create a DropdownList
   d1 = cp5.addDropdownList("myList-d1")
@@ -92,6 +94,7 @@ void draw()
 }
 
 void mousePressed(){
-  myController.resetView1();
-  myController.resetView3();
+  myController.resetView();
+  //myController.resetView1();
+  //myController.resetView3();
 }

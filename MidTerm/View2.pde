@@ -7,7 +7,7 @@ class View2 extends PApplet
   }
   public void settings()
   {
-    this.size(400,200);
+    this.size(800,400);
   }
   
   public void draw()
@@ -21,6 +21,7 @@ class View2 extends PApplet
     lineChart2.setPointColour(color(180,50,50,100));
     lineChart2.setPointSize(3);
     lineChart2.setLineWidth(3);
+    textSize(10);
     lineChart2.setXAxisLabel("\nAge ");
     lineChart2.setYAxisLabel("Count\n");
     lineChart2.draw(15,15,width-30,height-30);

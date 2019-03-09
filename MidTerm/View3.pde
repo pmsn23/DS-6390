@@ -7,7 +7,7 @@ class View3 extends PApplet
   }
   public void settings()
   {
-    this.size(400,200);
+    this.size(600,300);
     if (redraw3 == 0){
     noLoop();}
     else{ redraw();}
@@ -19,11 +19,11 @@ class View3 extends PApplet
     pushMatrix();
     if (currentIndex > 0){
     scatterplot = new XYChart(this);
-    scatterplot.setData(age,female);
+    scatterplot.setData(age,male);
     scatterplot.showXAxis(true); 
     scatterplot.showYAxis(true);
     scatterplot.setXAxisLabel("\nAge ");
-    scatterplot.setYAxisLabel("Female\n");
+    scatterplot.setYAxisLabel("Male\n");
     scatterplot.draw(15,15,width-30,height-30);}
     popMatrix();
   }
