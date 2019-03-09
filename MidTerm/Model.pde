@@ -4,23 +4,29 @@ class Model
   DropdownList d1;
  
   private Controller controller;
-  
-  private float radius1 = 10;
-  private float radius2 = 10;
+  private float redraw1;
+  private float redraw3;
   
   public Model(Controller _controller){
     controller = _controller;
   }
-  public float getRadius1(){
-    return radius1;
+  public float getflag1(){
+    return redraw1;
   }
-  public String getNames(){
-    return name;
+  public float getflag3(){
+    return redraw3;
   }
-  public void updateText(){
-    return;
+  public void setflag1(){
+    redraw1 += 1;
   }
-  public void increaseRadius2(){
-    radius2 += 10;
+  public void setflag3(){
+    redraw3 += 1;
   }
+  public void resetflag1(){
+    redraw1 = 0;
+  }
+  public void resetflag3(){
+    redraw3 = 0;
+  }
+  
 }

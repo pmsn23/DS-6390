@@ -15,17 +15,28 @@ class Controller
     PApplet.runSketch(new String[]{"My View 1"}, myView1);
     PApplet.runSketch(new String[]{"My View 2"}, myView2);     
     PApplet.runSketch(new String[]{"My View 3"}, myView3);     
-    myView1.updateRadius(myModel.getRadius1()); 
-    myView2.updateChart(myModel.getNames());
+    myView1.updateFlag(myModel.getflag1()); 
+    myView3.updateFlag(myModel.getflag3());
   }
   public void updateView1()
   {
-    myModel.updateText();
-    myView1.updateRadius(myModel.getRadius1());
+    myModel.setflag1();
+    myView1.updateFlag(myModel.getflag1());
   }
-  public void updateView2()
+  public void resetView1()
   {
-    myView2.updateChart(myModel.getNames());
-    //myView2.redrawChart();
+    myModel.resetflag1();
+    myView1.updateFlag(myModel.getflag1());
   }
+   public void updateView3()
+  {
+    myModel.setflag1();
+    myView1.updateFlag(myModel.getflag3());
+  }
+    public void resetView3()
+  {
+    myModel.resetflag3();
+    myView1.updateFlag(myModel.getflag3());
+  }
+
 }

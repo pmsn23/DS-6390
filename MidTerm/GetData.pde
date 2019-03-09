@@ -18,13 +18,15 @@ class Data{
     return table;
   }
   
-  int[] getFeatures(String column){
-    int [] features = {};
+  float[] getFeatures(String column){
+    float [] features = {};
     if (table != null){
-      features = new int[numRows];
+      features = new float[numRows];
       int i = 0; //dummy iterator
       for (TableRow row: table.rows()){
-         features[i] = row.getInt(column);
+         features[i] = row.getFloat(column);
+         //println(column);
+         //println(features[i]);
          i++;
       }
     }  

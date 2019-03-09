@@ -10,23 +10,17 @@ int iniPosX = 50;
 int iniPosY = 50;
 String featureName;
 
-float [] values =  new float [64];
-float [] counts = new float [64];
-float [] ages = new float [64];
-float [] Male = new float [64];
-float [] Female = new float [64];
-
 XYChart lineChart1;
 XYChart lineChart2;
 XYChart scatterplot;
 
 float currentIndex = 0;
-int [] featureValues = {}; 
-int [] featureValueCount = {};
-int [] age = {};
-int [] male = {};
-int [] female = {};
-int radius = 5;
+float [] featureValues = new float [64]; 
+float [] featureValueCount = new float [64];
+float [] age = new float [64];
+float [] male = new float [64];
+float [] female = new float [64];
+
 Data rd;
 ArrayList<String> features = new ArrayList<String>();
 Table table;
@@ -39,10 +33,7 @@ String name;
 void settings()
 {
   size(400,200);
-  name = "Pneumonia";
-  features.add(name);
-  name = "PleuralEffusion";
-  features.add(name);
+  getNames();
 
   myController = new Controller();
   // Load Data
@@ -70,13 +61,14 @@ void controlEvent(ControlEvent theEvent) {
     int index = (int)theEvent.getController().getValue();
     String Name = features.get(index)+" +ve";
     String Count = features.get(index)+" Count";
+    String sexPrefix = features.get(index).substring(0,2);
     featureName = Name;
     currentIndex = index;
     featureValues = rd.getFeatures(Name);
     featureValueCount = rd.getFeatures(Count);
     age = rd.getFeatures("Age");
-    male = rd.getFeatures("Male");
-    female = rd.getFeatures("Female");
+    male = rd.getFeatures(sexPrefix+"Male");
+    female = rd.getFeatures(sexPrefix+"Female");
   }
 }
 void draw()
@@ -95,11 +87,11 @@ void draw()
   customize(d1);
   strokeWeight(2);
   smooth();
-  drawArea(age, featureValues, featureValueCount, male, female);
+  drawArea(age, featureValues, name);
   d1.close();
 }
 
 void mousePressed(){
-  myController.updateView1();
-  myController.updateView2();
+  myController.resetView1();
+  myController.resetView3();
 }

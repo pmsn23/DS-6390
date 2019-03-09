@@ -1,35 +1,37 @@
 class View3 extends PApplet
 {
   private Controller controller;
-  private String name;
+  private float redraw3;
   public View3(Controller _controller){
     controller = _controller;
   }
   public void settings()
   {
     this.size(400,200);
+    if (redraw3 == 0){
+    noLoop();}
+    else{ redraw();}
   }
   
   public void draw()
   {
-    this.background(0,55,0);
     this.background(55,0,0);
+    pushMatrix();
+    if (currentIndex > 0){
     scatterplot = new XYChart(this);
-    scatterplot.setData(ages,Female);
+    scatterplot.setData(age,female);
     scatterplot.showXAxis(true); 
     scatterplot.showYAxis(true);
     scatterplot.setXAxisLabel("\nAge ");
-    scatterplot.setYAxisLabel("Feale\n");
-    scatterplot.draw(15,15,width-30,height-30);
-  
-}
-  public void updateChart(String _name)
-  {
-    name = _name;
+    scatterplot.setYAxisLabel("Female\n");
+    scatterplot.draw(15,15,width-30,height-30);}
+    popMatrix();
   }
-  public void redrawChart()
+  public void updateFlag(float _redraw3)
   {
-     controller.updateView2();
+    redraw3 = _redraw3;
   }
-  
+  public void mousePressed(){
+    redraw();
+  }
 }
