@@ -1,8 +1,8 @@
-class View1 extends PApplet
+class View3 extends PApplet
 {
   private Controller controller;
-  private float radius;
-  public View1(Controller _controller){
+  private String name;
+  public View3(Controller _controller){
     controller = _controller;
   }
   public void settings()
@@ -12,20 +12,24 @@ class View1 extends PApplet
   
   public void draw()
   {
+    this.background(0,55,0);
     this.background(55,0,0);
     scatterplot = new XYChart(this);
-    scatterplot.setData(ages,Male);
+    scatterplot.setData(ages,Female);
     scatterplot.showXAxis(true); 
     scatterplot.showYAxis(true);
     scatterplot.setXAxisLabel("\nAge ");
-    scatterplot.setYAxisLabel("Male\n");
+    scatterplot.setYAxisLabel("Feale\n");
     scatterplot.draw(15,15,width-30,height-30);
-  }
-  public void updateRadius(float _radius)
+  
+}
+  public void updateChart(String _name)
   {
-    radius = _radius;
+    name = _name;
   }
-  public void mousePressed(){
-    controller.updateView2();
+  public void redrawChart()
+  {
+     controller.updateView2();
   }
+  
 }

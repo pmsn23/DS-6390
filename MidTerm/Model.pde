@@ -14,11 +14,11 @@ class Model
   public float getRadius1(){
     return radius1;
   }
-  public float getRadius2(){
-    return radius2;
+  public String getNames(){
+    return name;
   }
-  public void increaseRadius1(){
-    radius1 += 10;
+  public void updateText(){
+    return;
   }
   public void increaseRadius2(){
     radius2 += 10;
