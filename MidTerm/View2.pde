@@ -26,8 +26,8 @@ class View2 extends PApplet
     lineChart2.setYAxisLabel("Count\n");
     lineChart2.draw(15,15,width-30,height-30);
     
-    //textSize(20);
-    //text(name+" Age Vs. People", 70,30);
+    textSize(15);
+    text("Age Vs. Total", 200,35);
   
 }
   public void updateChart()

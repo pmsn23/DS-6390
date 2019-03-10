@@ -39,7 +39,7 @@ void customize(DropdownList ddl)
 
   public void draw()
   {
-    this.background(178,207,252);
+    this.background(3,66,165);
     cp6 = new ControlP5(this);
     d2 = cp6.addDropdownList("myList-d2")
     .setPosition(50, 10)
@@ -62,7 +62,7 @@ void customize(DropdownList ddl)
         scatterplot.setData(age,female);
         scatterplot.showXAxis(true); 
         scatterplot.showYAxis(true);
-        scatterplot.setPointColour(color(180,50,50,100));
+        scatterplot.setPointColour(color(216,250,252,255));
         scatterplot.setXAxisLabel("\nAge ");
         scatterplot.draw(15,15,width-30,height-30);
       popMatrix();}
