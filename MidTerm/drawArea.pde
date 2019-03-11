@@ -5,7 +5,7 @@ void drawArea(float[] age, float[] value, String name){
   lineChart1.showYAxis(true); 
   lineChart1.setMinY(0);
   lineChart1.setData(age,value);
-  lineChart2.setPointColour(color(216,250,252,255));
+  lineChart1.setPointColour(color(216,250,252,255));
   lineChart1.setPointSize(3);
   lineChart1.setLineWidth(3);
   textSize(10);

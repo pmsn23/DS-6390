@@ -1,7 +1,7 @@
 class View2 extends PApplet
 {
   private Controller controller;
-  private String name;
+  //private String name;
   public View2(Controller _controller){
     controller = _controller;
   }
