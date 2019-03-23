@@ -10,10 +10,7 @@ class Circle extends Shape{
   }
   
   void display() {
-    //ellipseMode(CENTER);
-    //fill(79,160,245);
     fill(206,204,204);
-    //stroke(r);
     noStroke();
     ellipse(x,y,x/r,y/r);
   }
